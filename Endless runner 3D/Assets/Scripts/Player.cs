@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     bool alive = true;
     public float speed = 5;
     public Rigidbody rb;
-
+    
     public float horizontalMultiplier = 2;
 
     float horizontalInput;
@@ -36,14 +36,24 @@ public class Player : MonoBehaviour
     {
         alive = false;
 
+        //Loading menu
+        backtoMenu();
+
+
+
+
         // Restarting the game
 
-        Invoke("Restart", 1);
+        //Invoke("Restart", 1);
+
+    }
+    public void backtoMenu()
+    {
+        
        
+            SceneManager.LoadScene(0);
+        
     }
 
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+
 }
